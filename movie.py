@@ -12,10 +12,11 @@ movie = {
 
 movie["actors"] = ["Ryan Renolds" , "Morena Baccarin", "Brianna Hildebrand", "T.J. Miller"]
 
-
+#adding the minutes and the actors
 for key, val in movie.items():
     if key == "duration":
         print(f"{key} : {val} minutes")
+            #add actors
     elif key == "actors":
         print(key + ": " + ",".join(val))
     else:
