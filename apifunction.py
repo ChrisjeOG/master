@@ -11,11 +11,17 @@ def my_function(title, value):
     if req.status_code != 200:
         print(f"We got an error: {req.status_code}")
         exit()
+    return req
+
+def my_function2(title, value):
+    data = my_function(title, value).json()
     return data[f"{value}"]
+
 
 title = input("Give an article: ").strip()
 value = input("Description or extract? ").strip().lower()
-data = my_function(title, value)
+data = my_function2(title, value)
 
+print(f"https://en.wikipedia.org/wiki/{title}")
 print(f"Here is {value} for {title}:")
 print(data)
